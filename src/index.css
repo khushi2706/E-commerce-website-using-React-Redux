@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-      'Helvetica Neue', sans-serif;
+  font-family : Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 20px;
@@ -39,6 +37,7 @@ img {
 
 .btn:hover {
   background: #513282;
+  color: white;
 }
 
 .heading {
@@ -63,4 +62,10 @@ img {
   margin-bottom: 20px;
   padding: 14px;
   border-radius: 5px;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

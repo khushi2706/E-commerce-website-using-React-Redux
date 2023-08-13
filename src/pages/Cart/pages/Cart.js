@@ -34,35 +34,35 @@ export default class Cart extends Component {
         <div className="container mt-5">
           <div className="row">
             <div className="col-6">
-              {cart &&
-                cart.map((item) => (
-                  <div className="card mb-3">
-                    <div className="row g-0">
-                      <div className="col-md-3 align-center">
-                        <img
-                          src={item.image}
-                          width={100}
-                          className="img-fluid rounded-start"
-                          alt={item.title}
-                        />
-                      </div>
-                      <div className="col-md-7">
-                        <div className="card-body">
-                          <h5 className="card-title">{item.title}</h5>
-                          <p className="card-text">{item.price}</p>
+              {cart && cart.length
+                ? cart.map((item) => (
+                    <div className="card mb-3">
+                      <div className="row g-0">
+                        <div className="col-md-3 card-body">
+                          <img
+                            src={item.image}
+                            className="img center-block rounded-start"
+                            alt={item.title}
+                          />
+                        </div>
+                        <div className="col-md-7">
+                          <div className="card-body">
+                            <h5 className="card-title">{item.title}</h5>
+                            <p className="card-text">{item.price} Rs</p>
+                          </div>
+                        </div>
+                        <div className="col-md-2">
+                          <button
+                            className=" btn btn-danger mt-5"
+                            onClick={() => this.handleRemoveCart(item.id)}
+                          >
+                            X
+                          </button>
                         </div>
                       </div>
-                      <div className="col-md-2">
-                        <button
-                          className=" btn btn-danger mt-5"
-                          onClick={() => this.handleRemoveCart(item.id)}
-                        >
-                          X
-                        </button>
-                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))
+                : "there is nothing in your cart go and do shoopppinggg 🛒"}
             </div>
             <div className="col-6">
               <form className="row g-3">
@@ -114,36 +114,17 @@ export default class Cart extends Component {
                   </label>
                   <input type="text" className="form-control" id="inputCity" />
                 </div>
-                <div className="col-md-4">
-                  <label htmlFor="inputState" className="form-label">
-                    State
-                  </label>
-                  <select id="inputState" className="form-select">
-                    <option selected="">Choose...</option>
-                    <option>...</option>
-                  </select>
-                </div>
-                <div className="col-md-2">
+
+                <div className="col-md-6">
                   <label htmlFor="inputZip" className="form-label">
                     Zip
                   </label>
                   <input type="text" className="form-control" id="inputZip" />
                 </div>
-                <div className="col-12">
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="gridCheck"
-                    />
-                    <label className="form-check-label" htmlFor="gridCheck">
-                      Check me out
-                    </label>
-                  </div>
-                </div>
-                <div className="col-12">
+
+                <div className="col-12 mt-3">
                   <button type="submit" className="btn btn-primary">
-                    Sign in
+                    Check out
                   </button>
                 </div>
               </form>

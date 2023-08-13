@@ -26,7 +26,9 @@ class Navbar extends Component {
             justifyContent: "space-between",
           }}
         >
-          <span className="logo">My Store</span>
+          <span className="logo">
+            <h3>HappyKart 🛍️</h3>
+          </span>
           <div>
             <Link to="/" className="navLink">
               Home

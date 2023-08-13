@@ -5,8 +5,9 @@ export default class Home extends Component {
   render() {
     return (
       <>
-        <h2>Welcome to store</h2>
-        <Product />
+        <div className="mt-4">
+          <Product />
+        </div>
       </>
     );
   }
