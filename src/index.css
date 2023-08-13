@@ -11,11 +11,14 @@ body {
 img {
   height: 80px;
 }
-.card {
+.custom-card {
   background: white;
   padding: 20px;
   text-align: center;
   border-radius: 10px;
+}
+.product-title { 
+  font-size: 18px;
 }
 .productsWrapper {
   display: grid;
