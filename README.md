@@ -34,7 +34,7 @@ To get started with this project, follow these steps:
    ```
 
 4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page reloads when you make changes.
-5. 
+   
 You may also see any lint errors in the console.
 
 ## Scripts
