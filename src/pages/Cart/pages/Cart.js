@@ -33,7 +33,7 @@ export default class Cart extends Component {
     }
 
     if (password.length < 6) {
-      errors.password = "Password must be at least 6 characters long";
+      errors.password = "Password must be at least 8 characters long";
     }
 
     if (address.trim() === "") {
