@@ -1,10 +1,11 @@
 import { callAPI } from "../../../apis/callApi";
 import { ActionTypes } from "../../../redux/constants/action-type";
 
-export const fetchProductsAction = (products) => {
+export const fetchProductsAction = () => {
+  const products = callAPI("GET", "/products");
   return {
     type: ActionTypes.FETCH_PRODUCTS,
-    payload: callAPI("GET", "/products"),
+    payload: products,
   };
 };
 

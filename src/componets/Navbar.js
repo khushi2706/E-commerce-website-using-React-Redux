@@ -10,36 +10,37 @@ class Navbar extends Component {
     };
   }
 
-  componentDidUpdate(state) {
+  componentDidUpdate(prevProps) {
     const { cartReducer } = this.props;
-    if (cartReducer.cart !== state.cartReducer.cart)
+    if (cartReducer.cart !== prevProps.cartReducer.cart) {
       this.setState({ cartCount: cartReducer.cart.length });
+    }
   }
+
   render() {
     const { cartCount } = this.state;
+
     return (
-      <>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <span className="logo">
-            <h3>HappyKart 🛍️</h3>
-          </span>
-          <div>
-            <Link to="/" className="navLink">
-              Home
-            </Link>
-            <Link to="/cart" className="navLink">
-              Cart
-            </Link>
-            <span className="cartCount"> Cart items : {cartCount}</span>
-          </div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <span className="logo">
+          <h3>HappyKart 🛍️</h3>
+        </span>
+        <div>
+          <Link to="/" className="navLink">
+            Home
+          </Link>
+          <Link to="/cart" className="navLink">
+            Cart
+          </Link>
+          <span className="cartCount"> Cart items: {cartCount}</span>
         </div>
-      </>
+      </div>
     );
   }
 }
