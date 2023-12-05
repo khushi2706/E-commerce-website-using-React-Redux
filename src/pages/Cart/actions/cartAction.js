@@ -7,9 +7,9 @@ export const addToCartAction = (product = {}) => {
   };
 };
 
-export const removeFromCartAction = (id) => {
+export const removeFromCartAction = (productId) => {
   return {
     type: ActionTypes.REMOVE_FROM_CART,
-    payload: { id },
+    payload: { id: productId },
   };
 };

@@ -1,6 +1,6 @@
-import { fetchProductsAction } from "../actions/productAction";
 import { connect } from "react-redux";
 import Product from "../pages/Product";
+import { fetchProductsAction } from "../actions/productAction";
 import { addToCartAction } from "../../Cart/actions/cartAction";
 
 const mapStateToProps = (state) => ({
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchProducts: () => dispatch(fetchProductsAction()),
-  addToCart: (data) => dispatch(addToCartAction(data)),
+  addToCart: (productData) => dispatch(addToCartAction(productData)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Product);
