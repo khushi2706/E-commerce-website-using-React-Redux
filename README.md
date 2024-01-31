@@ -17,6 +17,7 @@ Welcome to the E-commerce Website project! This application is designed to showc
 To get started with this project, follow these steps:
 
 
+
 1. Fork and clone this repository to your local machine:
 
    ```bash
@@ -39,10 +40,12 @@ You may also see any lint errors in the console.
 
 ## Scripts
 
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
 
 ### `npm run build`
 
@@ -63,3 +66,4 @@ We welcome contributions from the community.
 Feel free to explore the codebase, test the application, and contribute to its development. If you have any questions or need assistance, please don't hesitate to reach out.
 
 Happy coding!
+
