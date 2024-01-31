@@ -1,5 +1,6 @@
 # E-commerce Website using React and Redux
 
+
 Welcome to the E-commerce Website project! This application is designed to showcase various features of React and Redux for building a modern and responsive e-commerce platform.
 
 ## Project Features
@@ -66,4 +67,5 @@ We welcome contributions from the community.
 Feel free to explore the codebase, test the application, and contribute to its development. If you have any questions or need assistance, please don't hesitate to reach out.
 
 Happy coding!
+
 
