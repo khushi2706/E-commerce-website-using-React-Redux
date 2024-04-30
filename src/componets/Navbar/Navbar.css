@@ -1,0 +1,40 @@
+/* Navbar.css */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #004d40; /* A deep teal color */
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    padding: 15px;
+
+  }
+  
+  .logo h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #FFD700; /* Gold color for the logo for a bit of contrast */
+  }
+  
+  .navLink {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .navLink:hover, .navLink:focus {
+    color: #FFD700; /* Gold color on hover */
+  }
+  
+  .cartCount {
+    margin-left: 20px;
+    background-color: #FFD700; /* Gold background for cart count */
+    color: #004d40; /* Deep teal text color */
+    padding: 5px 10px;
+    border-radius: 10px; /* Rounded corners for cart count */
+    font-weight: bold;
+  }
+  
