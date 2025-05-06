@@ -1,23 +1,70 @@
 import { ActionTypes } from "../../../redux/constants/action-type";
 
 const initialState = {
-  cart: [],
+  cart: [], // each item: { id, name, price, quantity }
+  totalPrice: 0,
+};
+
+const calculateTotal = (cart) => {
+  return cart.reduce((total, item) => total + item.price * item.quantity, 0);
 };
 
 export const cartReducer = (state = initialState, { type, payload }) => {
+  let updatedCart;
+
   switch (type) {
-    case ActionTypes.ADD_TO_CART:
-      // When adding to the cart, use the spread operator to preserve the existing state and add the new product to the cart array.
+    case ActionTypes.ADD_TO_CART: {
+      const existingProduct = state.cart.find(item => item.id === payload.product.id);
+
+      if (existingProduct) {
+        updatedCart = state.cart.map(item =>
+          item.id === payload.product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        updatedCart = [...state.cart, { ...payload.product, quantity: 1 }];
+      }
+
       return {
         ...state,
-        cart: [...state.cart, payload.product],
+        cart: updatedCart,
+        totalPrice: calculateTotal(updatedCart),
       };
+    }
 
     case ActionTypes.REMOVE_FROM_CART:
-      // When removing from the cart, use the spread operator to preserve the existing state and filter out the item with the specified ID from the cart array.
+      updatedCart = state.cart.filter(item => item.id !== payload.id);
       return {
         ...state,
-        cart: state.cart.filter((item) => item.id !== payload.id),
+        cart: updatedCart,
+        totalPrice: calculateTotal(updatedCart),
+      };
+
+    case ActionTypes.INCREASE_QUANTITY:
+      updatedCart = state.cart.map(item =>
+        item.id === payload.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+      return {
+        ...state,
+        cart: updatedCart,
+        totalPrice: calculateTotal(updatedCart),
+      };
+
+    case ActionTypes.DECREASE_QUANTITY:
+      updatedCart = state.cart
+        .map(item =>
+          item.id === payload.id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter(item => item.quantity > 0);
+      return {
+        ...state,
+        cart: updatedCart,
+        totalPrice: calculateTotal(updatedCart),
       };
 
     default:

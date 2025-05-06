@@ -13,3 +13,16 @@ export const removeFromCartAction = (productId) => {
     payload: { id: productId },
   };
 };
+
+export const increaseQuantityAction = (id) => ({
+  type: ActionTypes.INCREASE_QUANTITY,
+  payload: { id },
+});
+
+export const decreaseQuantityAction = (id) => ({
+  type: ActionTypes.DECREASE_QUANTITY,
+  payload: { id },
+});
+
+
+
