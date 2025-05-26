@@ -13,7 +13,7 @@ class Navbar extends Component {
   componentDidUpdate(prevProps) {
     const { cartReducer } = this.props;
     if (cartReducer.cart !== prevProps.cartReducer.cart) {
-      this.setState({ cartCount: cartReducer.cart.length });
+      this.setState({ cartCount: cartReducer.cart.map(item => item.quantity).reduce((a, b) => a + b, 0) });
     }
   }
 
